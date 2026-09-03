@@ -7,7 +7,7 @@ const panier = [
 
 const names = panier.map(item =>item.nom);
 
-console.log(`Noms				: ${names} \n`);
+console.log(`Noms				: ${JSON.stringify(names)} \n`);
 
 
 const Tot_Lignes = panier.map(item  =>    

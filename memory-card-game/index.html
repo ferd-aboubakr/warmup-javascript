@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 12 Card Grid</title>
-    <link rel = "stylesheet" href = "style.css" >
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <div class ="game-board" id="game-board"></div>
-        <script src ="script.js" ></script>
+    <div class="game-ui">
+        <p>Moves: <span id="moves">0</span> | Pairs: <span id="pairs">0</span>/6</p>
+        <button id="restart-btn">Restart Game</button>
+        <p id="victory-message" style="display: none; color: white;">You won!</p>
+    </div>
+
+    <div class="game-board" id="game-board"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>

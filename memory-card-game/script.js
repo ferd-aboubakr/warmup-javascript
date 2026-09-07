@@ -1,5 +1,5 @@
 const defaultImages = [
-    '/assets/images/card1.jpeg',
+    'assets/images/card1.jpeg',
     'assets/images/card2.jpeg',
     'assets/images/card3.jpeg',
     'assets/images/card4.jpeg',
@@ -41,11 +41,10 @@ function startGame() {
     pairsDisplay.textContent = pairs;
     victoryMsg.style.display = 'none';
 
-
-let deck = [...images, ...images];
+    let deck = [...images, ...images];
     deck.sort(() => 0.5 - Math.random());
 
-deck.forEach(imgSrc => {
+    deck.forEach(imgSrc => {
         const card = document.createElement('div');
         card.classList.add('card');
         card.innerHTML = `
@@ -56,13 +55,14 @@ deck.forEach(imgSrc => {
                 </div>
             </div>
         `;
-        board.appendChild(card);
-    });
-card.addEventListener('click', () => {
+
+        // The event listener must live INSIDE the loop so it targets each specific card
+        card.addEventListener('click', () => {
             if (flippedCards.length === 2 || card.classList.contains('flipped')) return;
 
             card.classList.add('flipped');
             flippedCards.push(card);    
+
             if (flippedCards.length === 2) {
                 moves++;
                 movesDisplay.textContent = moves;
@@ -74,7 +74,8 @@ card.addEventListener('click', () => {
                     pairs++;
                     pairsDisplay.textContent = pairs;
                     flippedCards = [];    
-                if (pairs === 6) {
+                    
+                    if (pairs === 6) {
                         victoryMsg.style.display = 'block';
                     }
                 } else {
@@ -86,8 +87,10 @@ card.addEventListener('click', () => {
                 }
             }
         });
-    }
+
+        board.appendChild(card);
+    });
+}
 
 restartBtn.addEventListener('click', startGame);
-startGame();    
-                    
+startGame();

@@ -41,3 +41,6 @@ function startGame() {
     pairsDisplay.textContent = pairs;
     victoryMsg.style.display = 'none';
 }
+
+let deck = [...images, ...images];
+    deck.sort(() => 0.5 - Math.random());

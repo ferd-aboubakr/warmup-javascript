@@ -40,7 +40,7 @@ function startGame() {
     movesDisplay.textContent = moves;
     pairsDisplay.textContent = pairs;
     victoryMsg.style.display = 'none';
-}
+
 
 let deck = [...images, ...images];
     deck.sort(() => 0.5 - Math.random());
@@ -63,4 +63,18 @@ card.addEventListener('click', () => {
 
             card.classList.add('flipped');
             flippedCards.push(card);    
-    
+            if (flippedCards.length === 2) {
+                moves++;
+                movesDisplay.textContent = moves;
+
+                let firstImage = flippedCards[0].querySelector('img').src;
+                let secondImage = flippedCards[1].querySelector('img').src;
+
+                if (firstImage === secondImage) {
+                    pairs++;
+                    pairsDisplay.textContent = pairs;
+                    flippedCards = [];    
+                if (pairs === 6) {
+                        victoryMsg.style.display = 'block';
+                    }
+                    

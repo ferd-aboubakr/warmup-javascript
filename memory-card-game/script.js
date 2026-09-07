@@ -13,3 +13,11 @@ if (!localStorage.getItem('card1')) {
     });
 }
 
+const images = [
+    localStorage.getItem('card1'),
+    localStorage.getItem('card2'),
+    localStorage.getItem('card3'),
+    localStorage.getItem('card4'),
+    localStorage.getItem('card5'),
+    localStorage.getItem('card6')
+];

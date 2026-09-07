@@ -58,5 +58,9 @@ deck.forEach(imgSrc => {
         `;
         board.appendChild(card);
     });
-    
+card.addEventListener('click', () => {
+            if (flippedCards.length === 2 || card.classList.contains('flipped')) return;
+
+            card.classList.add('flipped');
+            flippedCards.push(card);    
     

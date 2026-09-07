@@ -31,3 +31,13 @@ const victoryMsg = document.querySelector('#victory-message');
 let flippedCards = [];
 let moves = 0;
 let pairs = 0;
+
+function startGame() {
+    board.innerHTML = '';
+    flippedCards = [];
+    moves = 0;
+    pairs = 0;
+    movesDisplay.textContent = moves;
+    pairsDisplay.textContent = pairs;
+    victoryMsg.style.display = 'none';
+}

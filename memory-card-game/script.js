@@ -44,3 +44,19 @@ function startGame() {
 
 let deck = [...images, ...images];
     deck.sort(() => 0.5 - Math.random());
+
+deck.forEach(imgSrc => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `
+            <div class="card-inner">
+                <div class="card-face card-front">?</div>
+                <div class="card-face card-back">
+                    <img src="${imgSrc}" alt="Memory card">
+                </div>
+            </div>
+        `;
+        board.appendChild(card);
+    });
+    
+    

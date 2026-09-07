@@ -21,3 +21,13 @@ const images = [
     localStorage.getItem('card5'),
     localStorage.getItem('card6')
 ];
+
+const board = document.querySelector('#game-board');
+const movesDisplay = document.querySelector('#moves');
+const pairsDisplay = document.querySelector('#pairs');
+const restartBtn = document.querySelector('#restart-btn');
+const victoryMsg = document.querySelector('#victory-message');
+
+let flippedCards = [];
+let moves = 0;
+let pairs = 0;

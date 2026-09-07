@@ -77,4 +77,17 @@ card.addEventListener('click', () => {
                 if (pairs === 6) {
                         victoryMsg.style.display = 'block';
                     }
+                } else {
+                    setTimeout(() => {
+                        flippedCards[0].classList.remove('flipped');
+                        flippedCards[1].classList.remove('flipped');
+                        flippedCards = [];
+                    }, 1000);
+                }
+            }
+        });
+    }
+
+restartBtn.addEventListener('click', startGame);
+startGame();    
                     
